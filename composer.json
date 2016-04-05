@@ -1,0 +1,38 @@
+{
+  "name": "k10r/versioncentral",
+  "description": "VersionCentral TYPO3 Extension",
+  "homepage": "https://versioncentral.com",
+  "license": "Commercial",
+  "version": "0.0.1",
+  "require": {
+    "typo3/cms-core": "~6.2.0,<8.0"
+  },
+  "type": "typo3-cms-extension",
+  "autoload": {
+    "psr-4": {
+      "VersionCentral\\": "Classes/"
+    }
+  },
+  "replace": {
+    "versioncentral": "self.version"
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "mkdir -p .Build/Web/typo3conf/ext/",
+      "[ -L .Build/Web/typo3conf/ext/versioncentral ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/versioncentral"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.0.x-dev"
+    },
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
+  }
+}

@@ -3,7 +3,7 @@
 $EM_CONF[$_EXTKEY] = array(
   'title' => 'VersionCentral Updater',
   'description' => '...',
-  'category' => 'distribution',
+  'category' => 'plugin',
   'version' => '0.0.1',
   'state' => 'experimental',
   'uploadfolder' => false,
@@ -19,5 +19,11 @@ $EM_CONF[$_EXTKEY] = array(
     ),
     'conflicts' =>  array(),
     'suggests' =>  array()
-  )
+  ),
+  'autoload' => array(
+      'psr-4' =>
+          array(
+              'VersionCentral\\' => 'Classes',
+          ),
+  ),
 );
