@@ -30,10 +30,15 @@ class Updater extends AbstractTask
     $core = $availableExtensions['core'];
     $localExtensions = array_diff_key($allExtensions, $sysExtensions);
 
+    $localExtensions = array_filter($localExtensions, function($extension) {
+      return $extension['type'] !== 'System';
+    });
+
     $extensions = array_map(
       function(array $extension, $identifier) {
         return array(
           'identifier' => $identifier,
+          'name' => $extension['title'],
           'version' => $extension['version'],
           'active' => array_key_exists('installed', $extension) && $extension['installed']
         );
