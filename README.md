@@ -11,7 +11,7 @@
 
 ### TYPO3 Extension Manager
 
-Download the [current ZIP](https://github.com/version-central/ext-typo3/archive/master.zip) and install the ZIP file via the TYPO3 Extension Manager in your backend at Admin Tools > Extensions.
+Download the [current ZIP](https://github.com/version-central/ext-typo3/releases/download/v1.0.0/versioncentral_1.0.0.zip) and install the ZIP file via the TYPO3 Extension Manager in your backend at Admin Tools > Extensions.
 
 ## Configuration
 
